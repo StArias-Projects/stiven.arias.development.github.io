@@ -4,5 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://starias-projects.github.io',
-  base: 'stiven.arias.development.github.io',
+  base: '',
 })
+
+https://starias-projects.github.io/stiven.arias.development.github.io

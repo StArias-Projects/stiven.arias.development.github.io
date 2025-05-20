@@ -6,5 +6,3 @@ export default defineConfig({
   site: 'https://starias-projects.github.io',
   base: '',
 })
-
-https://starias-projects.github.io/stiven.arias.development.github.io

@@ -1,0 +1,51 @@
+:root {
+    --home-info-h1-color: #fff;
+    --home-info-p-color: #ebebeb;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem 2rem;
+}
+
+.home-avatar {
+    width: 25%;
+    border-radius: 5%;
+}
+
+.home-info {
+    text-align: left;
+}
+
+.home-info h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--home-info-h1-color);
+    font-weight: 700;
+}
+
+.home-info p {
+    font-size: 1.25rem;
+    color: var(--home-info-p-color);
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+/*Mobile Scaling*/
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-avatar {
+        width: 40%;
+    }
+
+    .home-info {
+        text-align: center;
+    }
+}

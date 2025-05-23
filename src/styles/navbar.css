@@ -1,0 +1,43 @@
+:root {
+    --nav-shadow: 0 0px 15px #F4F4F467;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: fit-content;
+    margin: 3rem auto 0 auto;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.333);
+    border-radius: 9999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-family: 'Rubik';
+    font-weight: bold;
+    box-shadow: var(--nav-shadow);
+}
+
+.nav-bar button {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-shadow: 0 0 0.3px #000000, 0 0 10px #279300;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-bar button:hover {
+    background-color: #6a0dad26;
+    color: #ffffff;
+}
+
+.nav-bar button.active {
+    background-color: #115905;
+    color: #ffffff;
+    border-radius: 0.5rem;
+}

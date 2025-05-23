@@ -1,10 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout.astro';
+import ReactApp from '../components/App.jsx';
 ---
 
-<Layout title="Stiven Arias Portfolio">
-  <h1>Hola, soy Stiven Arias</h1>
-  <p>Bienvenido a mi portfolio personal.</p>
-  <a href="https://github.com/starias" target="_blank" rel="noreferrer">GitHub</a>
+<Layout title="Stiven Arias Giraldo">
+  <ReactApp client:load />
 </Layout>
-

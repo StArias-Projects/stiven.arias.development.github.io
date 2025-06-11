@@ -1,12 +1,27 @@
 import '../styles/home.css';
+import HomeOverview from './HomeOverview';
+import useIsMobile from '../scripts/useIsMobile';
 
-export default function Home({ name, tagline, avatar }) {
+export default function Home({ name, tagline, avatar1, avatar2 }) {
+  const isMobile = useIsMobile();
+
   return (
     <section className="home">
-      <img className="home-avatar" src={avatar} alt={name} />
-      <div className="home-info">
-        <h1>{name}</h1>
-        <p>{tagline}</p>
+      <div className="home-left">
+        <div className="home-info">
+          <h1>{name}</h1>
+          <p>{tagline}</p>
+        </div>
+        <div className="home-overview-container">
+          <HomeOverview />
+        </div>
+      </div>
+      <div className="home-right">
+        <img
+          className="home-avatar"
+          src={isMobile ? avatar2 : avatar1}
+          alt={name}
+        />
       </div>
     </section>
   );

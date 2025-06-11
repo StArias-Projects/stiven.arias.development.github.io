@@ -4,7 +4,8 @@ import Home from './Home.jsx';
 import Work from './Work.jsx';
 import About from './About.jsx';
 
-import homeImage from '../assets/img/stiven-profile-matrix.png';
+import homeImage from '../assets/img/stiven-matrix.png';
+import homeImageV from '../assets/img/stiven-matrix-vertical.png';
 import workImage from '../assets/img/starias-icon.png';
 import aboutImage from '../assets/img/Upwork.png';
 
@@ -18,17 +19,20 @@ export default function App() {
       {activeSection === 'home' && <Home 
         name="Stiven Arias Giraldo" 
         tagline="Video Game Developer" 
-        avatar={homeImage.src} 
+        avatar1={homeImageV.src} 
+        avatar2={homeImage.src} 
       />}
       {activeSection === 'work' && <Work 
         name="Stiven Arias Giraldo" 
         tagline="Video Game Developer" 
-        avatar={workImage.src} 
+        avatar1={workImage.src} 
+        avatar2={workImage.src} 
       />}
       {activeSection === 'about' && <About 
         name="Stiven Arias Giraldo" 
         tagline="Video Game Developer" 
-        avatar={aboutImage.src}
+        avatar1={aboutImage.src}
+        avatar2={aboutImage.src}
       />}
     </>
   );

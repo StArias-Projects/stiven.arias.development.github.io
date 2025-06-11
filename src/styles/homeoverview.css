@@ -1,0 +1,15 @@
+.home-overview {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*Debug*/
+    background-color: #ff0202;
+}
+
+.home-overview-img {
+    height: 25rem;
+    width: auto;
+    border-radius: 5%;
+    object-fit: cover;
+}

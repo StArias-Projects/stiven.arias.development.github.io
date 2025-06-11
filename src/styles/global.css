@@ -1,17 +1,19 @@
 :root {
   --background-main-color: #1c1b29;
   --background-gradient-color: #0d0b19;
+
+  --font-heading: 'Lexend', sans-serif;
+  --font-body: 'Roboto', sans-serif;
 }
 
 body {
-  font-family: 'Lexend', sans-serif;
+  font-family: var(--font-body);
   margin: 0;
   padding: 0;
   background-image: linear-gradient(to right, #0d0b19, #1c1b29 50%, #0d0b19);
   color: #222;
 }
 
-a {
-  color: #0077cc;
-  text-decoration: none;
+h1, h2, h3, .heading {
+  font-family: var(--font-heading);
 }

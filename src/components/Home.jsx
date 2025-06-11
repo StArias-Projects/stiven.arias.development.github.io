@@ -12,16 +12,16 @@ export default function Home({ name, tagline, avatar1, avatar2 }) {
           <h1>{name}</h1>
           <p>{tagline}</p>
         </div>
-        <div className="home-overview-container">
-          <HomeOverview />
-        </div>
-      </div>
-      <div className="home-right">
         <img
           className="home-avatar"
           src={isMobile ? avatar2 : avatar1}
           alt={name}
         />
+      </div>
+      <div className="home-right">
+        <div className="home-overview-container">
+          <HomeOverview />
+        </div>
       </div>
     </section>
   );

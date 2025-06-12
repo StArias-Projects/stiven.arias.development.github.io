@@ -1,3 +1,7 @@
+:root{
+  --slider-background-colour: #252525;
+}
+
 .home-overview {
   display: flex;
   flex-direction: column;
@@ -25,28 +29,28 @@
 .home-overview-slider {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 25rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 0px 20px #000000;
+  border-radius: 50px;
+  background-color: var(--slider-background-colour);
 }
 
 .home-overview-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  border-radius: 1%;
+  display: none;
 }
 
 .home-overview-img.visible {
+  display: block;
   opacity: 1;
-  z-index: 1;
 }
 
 .home-overview-img.hidden {

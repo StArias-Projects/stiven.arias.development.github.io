@@ -13,22 +13,6 @@
     font-weight: bold;
 }
 
-@keyframes breath {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 1;
-        text-shadow: 0 0 3px #279300;
-    }
-
-    50% {
-        transform: scale(1.02);
-        opacity: 0.85;
-        text-shadow: 0 0 3px #279300;
-    }
-}
-
 .nav-label {
     font-size: 2em;
     color: #ffffff;
@@ -80,11 +64,12 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.1s ease, color 0.1s, transform 0.1s ease;
 }
 
 .nav-bar button:hover {
     background-color: #6a0dad26;
+    transform: scale(1.2);
     color: #ffffff;
 }
 
@@ -92,4 +77,5 @@
     background-color: #115905;
     color: #ffffff;
     border-radius: 0.5rem;
+    transform: scale(1.2);
 }

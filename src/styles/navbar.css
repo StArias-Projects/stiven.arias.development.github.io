@@ -1,81 +1,126 @@
 :root {
-    --nav-shadow: 0 0px 15px #F4F4F467;
+  /* Font sizes */
+  --nav-font-size-label: 2rem;
+  --nav-font-size-name-mobile: 1.5rem;
+  --nav-font-size-role-mobile: 1.3rem;
+  --nav-font-size-button: 1rem;
+
+  /* Spacing */
+  --nav-gap-desktop: 2rem;
+  --nav-gap-mobile: 1rem;
+  --nav-margin-top: 3rem;
+  --nav-padding-button: 0.5em 1em;
+  --nav-padding-button-mobile: 0.4em 0.8em;
+  --nav-padding-bar: 1rem 2rem;
+  --nav-padding-bar-mobile: 0.5rem 1rem;
+
+  /* Shadows */
+  --nav-shadow: 0 0px 15px #f4f4f467;
+
+  /* Colors */
+  --nav-color-text: #ffffff;
+  --nav-color-highlight: #2fff00;
+  --nav-color-hover: #6a0dad26;
+  --nav-color-active: #115905;
+  --nav-bg: rgba(0, 0, 0, 0.333);
 }
 
 .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: 'Lexend';
-    font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: var(--nav-margin-top);
+  font-family: var(--font-heading);
+  font-weight: bold;
 }
 
 .nav-label {
-    font-size: 2em;
-    color: #ffffff;
-    text-align: center;
-    text-shadow: 0 0 10px #000000, 0 0 5px #2fff00;
+  flex: 1 1 100%;
+  text-align: center;
+  font-size: var(--nav-font-size-label);
+  color: var(--nav-color-text);
+  text-shadow: 0 0 10px #000, 0 0 5px var(--nav-color-highlight);
 }
 
-.nav-label.left {
-    flex: 4;
-    justify-content: center;
-    align-items: center;
-    /*Debug*/
-    outline: 2px solid rgb(255, 0, 0, 0);
-}
-
-.nav-label.right {
-    flex: 4;
-    justify-content: center;
-    align-items: center;
-
-    /*Debug*/
-    outline: 2px solid rgb(0, 255, 0, 0);
+.nav-label.name {
+  order: 1;
+  flex: 4;
 }
 
 .nav-bar {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.333);
-    border-radius: 9999px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: var(--nav-shadow);
-    /*Debug*/
-    outline: 2px solid rgb(0, 0, 255, 0);
+  order: 2;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--nav-gap-desktop);
+  width: fit-content;
+  margin: 0 auto;
+  padding: var(--nav-padding-bar);
+  background-color: var(--nav-bg);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--nav-shadow);
+}
+
+.nav-label.role {
+  order: 3;
+  flex: 4;
 }
 
 .nav-bar button {
-    background: transparent;
-    border: none;
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-shadow: 0 0 0.3px #000000, 0 0 10px #279300;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.1s ease, color 0.1s, transform 0.1s ease;
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: var(--nav-font-size-button);
+  color: var(--nav-color-text);
+  text-shadow: 0 0 0.3px #000, 0 0 10px #279300;
+  padding: var(--nav-padding-button);
+  border-radius: 0.5em;
+  transition: background-color 0.1s ease, color 0.1s, transform 0.1s ease;
 }
 
 .nav-bar button:hover {
-    background-color: #6a0dad26;
-    transform: scale(1.2);
-    color: #ffffff;
+  background-color: var(--nav-color-hover);
+  transform: scale(1.2);
 }
 
 .nav-bar button.active {
-    background-color: #115905;
-    color: #ffffff;
-    border-radius: 0.5rem;
-    transform: scale(1.2);
+  background-color: var(--nav-color-active);
+  transform: scale(1.2);
+}
+
+/* Mobile Scaling */
+@media (max-width: 1150px) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--nav-gap-mobile);
+  }
+
+  .nav-label.name {
+    order: 2;
+    font-size: var(--nav-font-size-name-mobile);
+  }
+
+  .nav-label.role {
+    order: 3;
+    flex: none;
+    font-size: var(--nav-font-size-role-mobile);
+  }
+
+  .nav-bar {
+    order: 1;
+    flex: none;
+    margin: 0;
+    padding: var(--nav-padding-bar-mobile);
+    gap: var(--nav-gap-mobile);
+  }
+
+  .nav-bar button {
+    font-size: var(--nav-font-size-button);
+    padding: var(--nav-padding-button-mobile);
+  }
 }

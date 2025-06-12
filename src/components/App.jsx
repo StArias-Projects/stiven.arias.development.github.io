@@ -4,11 +4,6 @@ import Home from './Home.jsx';
 import Work from './Work.jsx';
 import About from './About.jsx';
 
-import homeImage from '../assets/img/stiven-matrix.png';
-import homeImageV from '../assets/img/stiven-matrix-vertical.png';
-import workImage from '../assets/img/starias-icon.png';
-import aboutImage from '../assets/img/Upwork.png';
-
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
@@ -16,24 +11,9 @@ export default function App() {
     <>
       <NavBar active={activeSection} setActive={setActiveSection} />
 
-      {activeSection === 'home' && <Home 
-        name="Stiven Arias Giraldo" 
-        tagline="Video Game Developer" 
-        avatar1={homeImageV.src} 
-        avatar2={homeImage.src} 
-      />}
-      {activeSection === 'work' && <Work 
-        name="Stiven Arias Giraldo" 
-        tagline="Video Game Developer" 
-        avatar1={workImage.src} 
-        avatar2={workImage.src} 
-      />}
-      {activeSection === 'about' && <About 
-        name="Stiven Arias Giraldo" 
-        tagline="Video Game Developer" 
-        avatar1={aboutImage.src}
-        avatar2={aboutImage.src}
-      />}
+      {activeSection === 'home' && <Home/>}
+      {activeSection === 'work' && <Work/>}
+      {activeSection === 'about' && <About/>}
     </>
   );
 }

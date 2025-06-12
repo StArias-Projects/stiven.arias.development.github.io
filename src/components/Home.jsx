@@ -1,10 +1,14 @@
 import '../styles/home.css';
-import HomeOverview from './HomeOverview';
-import useIsMobile from '../scripts/useIsMobile';
 import "../assets/upwork/css/fontello.css";
 import "../assets/upwork/css/fontello-embedded.css";
 
-export default function Home({ name, tagline, avatar1, avatar2 }) {
+import HomeOverview from './HomeOverview.jsx';
+
+import useIsMobile from '../scripts/useIsMobile';
+import homeImageV from '../assets/img/stiven-matrix-vertical.png';
+import homeImageM from '../assets/img/stiven-matrix-mobile.png';
+
+export default function Home() {
   const isMobile = useIsMobile();
 
   return (
@@ -14,8 +18,8 @@ export default function Home({ name, tagline, avatar1, avatar2 }) {
           <div className="avatar-container">
             <img
               className="home-avatar"
-              src={isMobile ? avatar2 : avatar1}
-              alt={name}
+              src={isMobile ? homeImageM.src : homeImageV.src}
+              alt={"avatar"}
             />
           </div>
           <div className="home-links">

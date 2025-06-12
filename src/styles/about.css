@@ -1,0 +1,7 @@
+.about {
+    display: flex;
+    height: 80vh;
+    overflow: hidden;
+    /*Debug*/
+    outline: 2px solid rgb(255, 0, 0, 0);
+}

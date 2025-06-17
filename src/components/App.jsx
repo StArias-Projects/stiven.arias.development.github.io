@@ -6,7 +6,7 @@ import Work from './Work.jsx';
 import About from './About.jsx';
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('work');
+  const [activeSection, setActiveSection] = useState('home');
 
   return (
     <>

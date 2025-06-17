@@ -1,7 +1,73 @@
-.work {
-    display: flex;
-    height: 80vh;
-    overflow: hidden;
-    /*Debug*/
-    outline: 2px solid rgb(255, 0, 0, 0);
+:root {
+  /* Font sizes */
+  --work-font-size-button: 1.2rem;
+  --work-font-size-button-mobile: 0.7rem;
+
+  /* Spacing */
+  --work-gap-desktop: 2rem;
+  --work-gap-mobile: 1rem;
+  --work-padding-button-inline: 1rem;
+  --work-padding-button-block: 0.5rem;
+  --work-padding-button-mobile-inline: 0.8rem;
+  --work-padding-button-mobile-block: 0.4rem;
+
+  /* Colors */
+  --work-color-text: #ffffff;
+  --work-color-highlight: #2fff00;
+  --work-color-hover: #6a0dad26;
+  --work-color-active: #115905;
+  --work-bg: rgba(0, 0, 0, 0.333);
+
+  /* Shadows */
+  --work-shadow: 0 0px 15px #f4f4f467;
+}
+
+.work-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--work-gap-desktop);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.work-tabs button {
+  font-family: var(--font-heading);
+  font-size: var(--work-font-size-button);
+  color: var(--work-color-text);
+  background-color: var(--work-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: var(--work-padding-button-block) var(--work-padding-button-inline);
+  cursor: pointer;
+
+  text-shadow: 0 0 0.3px #000, 0 0 1px var(--work-color-highlight);
+  box-shadow: var(--work-shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.work-tabs button:hover {
+  background-color: var(--work-color-hover);
+  transform: scale(1.1);
+}
+
+.work-tabs button.active {
+  background-color: var(--work-color-active);
+  border-color: var(--work-color-active);
+  color: var(--work-color-text);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1150px) {
+  .work-tabs {
+    gap: var(--work-gap-mobile);
+  }
+
+  .work-tabs button {
+    font-size: var(--work-font-size-button-mobile);
+    padding: var(--work-padding-button-mobile-block) var(--work-padding-button-mobile-inline);
+  }
 }

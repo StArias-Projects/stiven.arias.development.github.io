@@ -2,9 +2,10 @@ import '../styles/home.css';
 import "../assets/upwork/css/fontello.css";
 import "../assets/upwork/css/fontello-embedded.css";
 
-import HomeOverview from './HomeOverview.jsx';
+import HomeOverview from './home_content/HomeOverview.jsx';
 
 import useIsMobile from '../scripts/useIsMobile';
+
 import homeImageV from '../assets/img/stiven-matrix-vertical.png';
 import homeImageM from '../assets/img/stiven-matrix-mobile.png';
 

@@ -73,8 +73,8 @@
 @media (max-width: 1150px) {
   .home-overview-slider {
     width: 95%;
-    aspect-ratio: 16 / 10; /* Mantiene proporción similar a 25rem de alto con 40rem de ancho aprox. */
-    height: auto;          /* Deja que el aspect-ratio controle la altura */
+    aspect-ratio: 16 / 10;
+    height: auto;
     border-radius: 2rem;
     box-shadow: var(--slider-shadow);
   }

@@ -1,9 +1,14 @@
 import '../styles/navbar.css';
 
+import useIsMobile from '../scripts/useIsMobile';
+
 export default function NavBar({ active, setActive }) {
+  const isMobile = useIsMobile();
+  const showLabels = !isMobile || (isMobile && active === 'home');
+
   return (
     <div className="nav-wrapper">
-      <span className="nav-label name">Stiven Arias Giraldo</span>
+      {showLabels && <span className="nav-label name">Stiven Arias Giraldo</span>}
 
       <nav className="nav-bar">
         {['home', 'work', 'about'].map((section) => (
@@ -17,7 +22,7 @@ export default function NavBar({ active, setActive }) {
         ))}
       </nav>
 
-      <span className="nav-label role">Video Game Developer</span>
+      {showLabels && <span className="nav-label role">Video Game Developer</span>}
     </div>
   );
 }

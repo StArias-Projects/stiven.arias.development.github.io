@@ -3,7 +3,8 @@
   --nav-font-size-label: 2rem;
   --nav-font-size-name-mobile: 1.5rem;
   --nav-font-size-role-mobile: 1.3rem;
-  --nav-font-size-button: 1rem;
+  --nav-font-size-button: 1.2rem;
+  --nav-font-size-button-mobile: 0.7rem;
 
   /* Spacing */
   --nav-gap-desktop: 2rem;
@@ -12,7 +13,7 @@
   --nav-padding-button: 0.5em 1em;
   --nav-padding-button-mobile: 0.4em 0.8em;
   --nav-padding-bar: 1rem 2rem;
-  --nav-padding-bar-mobile: 0.5rem 1rem;
+  --nav-padding-bar-mobile: 0.5rem 0rem;
 
   /* Shadows */
   --nav-shadow: 0 0px 15px #f4f4f467;
@@ -80,6 +81,7 @@
   padding: var(--nav-padding-button);
   border-radius: 0.5em;
   transition: background-color 0.1s ease, color 0.1s, transform 0.1s ease;
+  cursor: pointer;
 }
 
 .nav-bar button:hover {
@@ -115,12 +117,14 @@
     order: 1;
     flex: none;
     margin: 0;
+    width: 90%;
     padding: var(--nav-padding-bar-mobile);
     gap: var(--nav-gap-mobile);
+    justify-content: center;
   }
 
   .nav-bar button {
-    font-size: var(--nav-font-size-button);
+    font-size: var(--nav-font-size-button-mobile);
     padding: var(--nav-padding-button-mobile);
   }
 }

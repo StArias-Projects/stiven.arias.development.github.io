@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import '../../styles/workcard.css';
+import '../../styles/projects.css';
 
+import ProjectCard from '../utils/ProjectCard.jsx';
 import Gif from '../utils/Gif.jsx';
 import YouTube from '../utils/YouTube.jsx';
 import Video from '../utils/Video.jsx';
@@ -10,19 +11,14 @@ import colour_space from '../../assets/video/colourSpace-gameplay.mp4'
 import unity_save from '../../assets/video/unity-save-system.mp4'
 
 export default function Projects() {
-    const [expandedIndex, setExpandedIndex] = useState(null);
-
-    const toggleExpand = (index) => {
-        setExpandedIndex(expandedIndex === index ? null : index);
-    };
+    const [selectedProject, setSelectedProject] = useState(null);
 
     // Projects Data
     const projects = [
         {
             title: 'Hell\'s Kichenette',
-            company: 'Bullet Hell Jam #6 - Ranked 72/230',
-            startDate: 'May 2025',
-            endDate: '10 days development - 2 people',
+            subtitle: 'Bullet Hell Jam #6 - Ranked 72/230',
+            date: 'May 2025',
             description:
                 'The only restaurant where bullets fly faster than orders. ' +
                 'You\'re the last line of defense between chaos and cuisine ' +
@@ -51,9 +47,8 @@ export default function Projects() {
         },
         {
             title: 'Colour Space Video Game - Game Jam Winner',
-            company: 'Macro Jam #6',
-            startDate: 'April 2025',
-            endDate: '4 days development - 2 people',
+            subtitle: 'Macro Jam #6',
+            date: 'April 2025',
             description:
                 'Colour Space is a survival action game in which you have ' +
                 'to defeat enemies by reflecting their own projectiles. ' +
@@ -86,9 +81,8 @@ export default function Projects() {
         },
         {
             title: 'Unity Save System',
-            company: 'Unity SDK',
-            startDate: 'March 2025',
-            endDate: 'Multiplatform',
+            subtitle: 'Unity SDK',
+            date: 'March 2025',
             description:
                 'Save System is a personal and free tool-project to save the data ' +
                 'of video games on different platforms.\n' +
@@ -118,72 +112,38 @@ export default function Projects() {
 
     // Card Structure
     return (
-        <div className="card-container">
-            {projects.map((project, index) => (
-                <div key={index} className="card">
-                    <div className="card-grid">
-                        <div className="card-c1">
-                            <h3 className="card-title">{project.title}</h3>
-                            <h3 className="card-company">{project.company}</h3>
-                            <p className="card-dates">
-                                <i className="fa fa-calendar" style={{ fontSize: '1rem', marginRight: '0.5rem' }}></i>
-                                {project.startDate} – {project.endDate}
-                            </p>
+        <div className="project-wrapper">
+            <div className="project-grid-container">
+                {projects.map((project, index) => (
+                    <button
+                        key={index}
+                        className="project-card"
+                        onClick={() => setSelectedProject(project)}
+                    >
+                        <h3 className="project-title">{project.title}</h3>
+                        <h4 className="project-subtitle">{project.subtitle}</h4>
+                        <p className="project-dates">
+                            <i className="fa fa-calendar" style={{ fontSize: '1rem', marginRight: '0.5rem' }}></i>
+                            {project.date}
+                        </p>
+                        <div className="project-media">
+                            {project.mediaComponent}
                         </div>
+                    </button>
+                ))}
+            </div>
 
-                        <div className="card-c2">
-                            {project.links && (
-                                <div className="card-links">
-                                    {project.links.map((link, i) => (
-                                        <a
-                                            key={i}
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="card-link"
-                                        >
-                                            {link.label}
-                                        </a>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="card-c3">
-                            <p className={`card-description ${expandedIndex === index ? 'expanded' : 'collapsed'}`}>
-                                {project.description}
-                            </p>
-                            <div className="card-readmore-wrapper">
-                                <button className="card-readmore" onClick={() => toggleExpand(index)}>
-                                    {expandedIndex === index ? (
-                                        <i className="fa fa-play" style={{ fontSize: '1rem', transform: 'rotate(-90deg)' }}></i>
-                                    ) : (
-                                        <i className="fa fa-play" style={{ fontSize: '1rem', transform: 'rotate(90deg)' }}></i>
-                                    )}
-                                </button>
-                            </div>
-                            {project.bullets && (
-                                <ul className="card-bullets">
-                                    {project.bullets.map((point, i) => (
-                                        <li key={i}>{point}</li>
-                                    ))}
-                                </ul>
-                            )}
-                            <div className="card-keywords">
-                                {project.keywords.map((kw, i) => (
-                                    <span key={i} className="card-keyword">{kw}</span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="card-c4">
-                            <div className="card-asset-container">
-                                {project.mediaComponent}
-                            </div>
-                        </div>
+            {selectedProject && (
+                <div className="project-overlay" onClick={() => setSelectedProject(null)}>
+                    <div className="project-popup" onClick={e => e.stopPropagation()}>
+                        <button className="popup-close" onClick={() => setSelectedProject(null)}>
+                            <i className="fa fa-window-close" style={{ fontSize: '2rem', marginRight: '0.5rem', marginTop: '0.5rem' }}>
+                            </i>
+                        </button>
+                        <ProjectCard project={selectedProject} />
                     </div>
                 </div>
-            ))}
+            )}
         </div>
     );
 }

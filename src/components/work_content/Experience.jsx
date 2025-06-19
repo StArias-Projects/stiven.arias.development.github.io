@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../styles/workcard.css';
+import '../../styles/experience.css';
 
 import Gif from '../utils/Gif.jsx';
 import YouTube from '../utils/YouTube.jsx';
@@ -132,7 +132,7 @@ export default function Experience() {
                                             rel="noopener noreferrer"
                                             className="card-link"
                                         >
-                                            {link.label}
+                                            {link.label} <i className="fa fa-arrow-right" style={{ transform: 'rotate(-45deg)' }}></i>
                                         </a>
                                     ))}
                                 </div>

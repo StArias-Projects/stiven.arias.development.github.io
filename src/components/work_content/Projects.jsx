@@ -299,7 +299,7 @@ export default function Projects() {
             links: [
                 { label: 'Github repository', url: 'https://github.com/while-true-studio/GoblinSlayer' },
             ],
-        },
+        },                                                                                                                                  
     ];
 
     // Card Structure

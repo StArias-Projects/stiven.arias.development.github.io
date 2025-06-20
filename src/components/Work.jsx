@@ -5,7 +5,7 @@ import Experience from './work_content/Experience.jsx';
 import Projects from './work_content/Projects.jsx';
 
 export default function Work() {
-  const [subSection, setSubSection] = useState('experience');
+  const [subSection, setSubSection] = useState('projects');
 
   return (
     <section className="work">

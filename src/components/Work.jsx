@@ -43,17 +43,6 @@ export default function Work({ setActive }) {
             }} className="work-button work-crosslink-button">
               💻 Explore Projects 💻
             </button>
-            <br></br>
-            <button
-              onClick={() => {
-                setActive('about');
-                window.scrollTo(0, 0);
-              }}
-              className="work-button work-crosslink-button"
-              style={{ marginTop: '1rem' }}
-            >
-              😎 Explore About Me 😎
-            </button>
           </>
         )}
 
@@ -72,6 +61,20 @@ export default function Work({ setActive }) {
             </div>
           </>
         )}
+
+        <div className="work-divider" />
+        <p className="work-crosslink-text">Curious about the mind behind the code?</p>
+        <button
+          onClick={() => {
+            setActive('about');
+            window.scrollTo(0, 0);
+          }}
+          className="work-button work-crosslink-button"
+          style={{ marginTop: '1rem' }}
+        >
+          😎 Explore About Me 😎
+        </button>
+
       </div>
     </section>
   );

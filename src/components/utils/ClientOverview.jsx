@@ -1,4 +1,4 @@
-import '../../styles/homeoverview.css';
+import '../../styles/clientoverview.css';
 
 import review1 from '../../assets/img/carlos-recommendation.png';
 import review2 from '../../assets/upwork/review1.png';
@@ -11,7 +11,7 @@ const images = [review1, review2, review3, review4, review5, review6];
 
 import useImageSlider from '../../scripts/useImageSlider';
 
-export default function HomeOverview() {
+export default function ClientOverview() {
     const current = useImageSlider(images, 5000);
 
     return (

@@ -2,7 +2,7 @@ import '../styles/home.css';
 import "../assets/upwork/css/fontello.css";
 import "../assets/upwork/css/fontello-embedded.css";
 
-import HomeOverview from './home_content/HomeOverview.jsx';
+import ClientOverview from './utils/ClientOverview.jsx';
 
 import useIsMobile from '../scripts/useIsMobile';
 
@@ -44,7 +44,7 @@ export default function Home() {
       </div>
       <div className="home-right">
         <div className="home-overview-container">
-          <HomeOverview />
+          <ClientOverview />
         </div>
       </div>
     </section>

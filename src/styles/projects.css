@@ -26,26 +26,11 @@
 }
 
 .project-github-link {
-  color: var(--work-color-text);
-  text-decoration: none;
-
-  font-family: var(--font-heading);
   font-size: 1.7rem;
-
-  text-align: center;
-  padding: 0.4rem 0.6rem;
-  border-radius: 9999px;
-
-  background-color: var(--work-bg);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-
-  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .project-github-link:hover {
   background-color: var(--work-color-active);
-  transform: scale(1.1);
 }
 
 .project-grid-container {
@@ -159,22 +144,6 @@
   overflow-y: auto;
   border-radius: 1rem;
   animation: scaleIn 0.3s ease;
-}
-
-.popup-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: var(--project-card-text);
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.popup-close:hover {
-  color: rgb(255, 0, 0);
 }
 
 /* Animations */

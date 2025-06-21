@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
 import '../../styles/popupcard.css';
+import '../../styles/work.css';
 
-export default function PopUpCard({ project }) {
+export default function PopUpCard({ project, onClose }) {
     const [isExpanded, setExpandedIndex] = useState(null);
 
     const toggleExpand = () => {
@@ -11,6 +12,10 @@ export default function PopUpCard({ project }) {
 
     return (
         <div className="project-popup-card">
+            <button className="popup-close" onClick={onClose}>
+                <i className="fa fa-window-close"></i>
+            </button>
+
             <div className="popup-c1">
                 <h2 className="popup-title">{project.title}</h2>
                 <h3 className="popup-subtitle">{project.subtitle}</h3>
@@ -29,7 +34,7 @@ export default function PopUpCard({ project }) {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="popup-link"
+                                className="work-button popup-link"
                             >
                                 {link.label} <i className="fa fa-arrow-right" style={{ transform: 'rotate(-45deg)' }}></i>
                             </a>

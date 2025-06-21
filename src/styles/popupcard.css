@@ -1,7 +1,7 @@
 :root {
     --popup-bg: rgb(35, 35, 35);
     --popup-radius: 1rem;
-    --popup-padding: 2rem;
+    --popup-padding: 2.5rem;
     --popup-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     --popup-highlight: #2fff00;
     --popup-text: #ffffff;
@@ -28,6 +28,7 @@
     margin: auto;
     max-height: none;
     overflow: visible;
+    position: relative;
 }
 
 html,
@@ -155,26 +156,30 @@ body {
 }
 
 .popup-link {
-    color: var(--work-color-text);
-    text-decoration: none;
-
-    font-family: var(--font-heading);
     font-size: 1.3rem;
-
-    text-align: center;
     padding: 0.4rem 0.6rem;
-    border-radius: 9999px;
-
     background-color: var(--work-bg);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-
-    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    /*border: 1px solid rgba(255, 255, 255, 0.2);*/
 }
 
 .popup-link:hover {
     background-color: var(--work-color-active);
-    transform: scale(1.1);
+}
+
+.popup-close {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.5rem;
+    font-size: 1.7rem;
+    background: none;
+    border: none;
+    color: rgb(255, 128, 128);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-close:hover {
+    color: red;
 }
 
 /* Responsive: Stack in single column */
@@ -190,5 +195,13 @@ body {
 
     .popup-link {
         font-size: 1rem;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+        font-size: 2rem;
+        color: red;
     }
 }

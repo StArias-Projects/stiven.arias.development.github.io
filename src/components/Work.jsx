@@ -1,12 +1,10 @@
-import { useState } from 'react';
 import '../styles/work.css';
 
 import Experience from './work_content/Experience.jsx';
 import Projects from './work_content/Projects.jsx';
 import ClientOverview from './utils/ClientOverview.jsx';
 
-export default function Work({ setActive }) {
-  const [subSection, setSubSection] = useState('experience');
+export default function Work({ subSection, setSubSection, setSection }) {
 
   return (
     <section className="work">
@@ -35,7 +33,7 @@ export default function Work({ setActive }) {
           <>
             <div className="work-divider" />
 
-            <p className="work-crosslink-text">Interested in my personal projects?</p>
+            <p className="work-crosslink-text">Interested in My personal Projects?</p>
 
             <button onClick={() => {
               setSubSection('projects');
@@ -49,12 +47,12 @@ export default function Work({ setActive }) {
         {subSection === 'projects' && (
           <>
             <div className="work-divider" />
-            <p className="work-crosslink-text">Driven by real-world professional jobs!</p>
+            <p className="work-crosslink-text">Driven by Real-World Professional Jobs!</p>
             <button onClick={() => {
               setSubSection('experience');
               window.scrollTo(0, 0);
             }} className="work-button work-crosslink-button">
-              💻 Explore Experience 💻
+              👾 Explore Experience 👾
             </button>
             <div className="client-overview-container">
               <ClientOverview />
@@ -63,10 +61,10 @@ export default function Work({ setActive }) {
         )}
 
         <div className="work-divider" />
-        <p className="work-crosslink-text">Curious about the mind behind the code?</p>
+        <p className="work-crosslink-text">Curious About the Mind Behind the Code?</p>
         <button
           onClick={() => {
-            setActive('about');
+            setSection('about');
             window.scrollTo(0, 0);
           }}
           className="work-button work-crosslink-button"

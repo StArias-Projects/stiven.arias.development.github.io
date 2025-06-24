@@ -1,6 +1,7 @@
 import '../styles/navbar.css';
 
 import useIsMobile from '../scripts/useIsMobile';
+import "../assets/cv_icon/css/fontello.css";
 
 export default function NavBar({ active, setActive }) {
   const isMobile = useIsMobile();

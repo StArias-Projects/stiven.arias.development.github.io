@@ -1,7 +1,108 @@
-.about {
+/*Design and structure of a card*/
+.about-card {
+    margin: 1.5rem;
+    width: 70%;
+}
+
+.about-card-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "c1 c2";
+    gap: 1rem;
+    width: 100%;
+}
+
+.about-card-c1 {
+    grid-area: c1;
     display: flex;
-    height: 80vh;
-    overflow: hidden;
-    /*Debug*/
-    outline: 2px solid rgb(255, 0, 0, 0);
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.about-card-c2 {
+    grid-area: c2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+/*Information contained within a card*/
+/*C1 content*/
+.about-card-title {
+    font-size: 1.8rem;
+}
+
+.about-card-description-wrapper {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.about-card-description {
+    font-size: 1rem;
+    color: var(--work-color-text);
+    line-height: 1.5;
+}
+
+.about-card-description a {
+    color: rgb(33, 255, 44);
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.about-card-description a:hover {
+    color: red;
+}
+
+/*C2 content*/
+.about-card-asset-container {
+    width: 100%;
+}
+
+.about-avatar {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--home-avatar-border-radius);
+    border: 3px solid var(--avatar-frame-color);
+}
+
+/*Mobile*/
+@media (max-width: 1150px) {
+    .card {
+        padding: 1rem;
+        width: 85%;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "c1"
+            "c2"
+            "c4"
+            "c3";
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .card-company {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .card-link {
+        font-size: 1rem;
+    }
 }

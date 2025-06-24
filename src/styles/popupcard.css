@@ -10,7 +10,8 @@
     --popup-gap: 1.5rem;
 }
 
-.project-popup-card {
+/*Container of the pop up card*/
+.popup-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -31,11 +32,6 @@
     position: relative;
 }
 
-html,
-body {
-    overflow-y: auto;
-}
-
 .popup-c1 {
     grid-area: c1;
 }
@@ -52,7 +48,25 @@ body {
     grid-area: c4;
 }
 
-/* Content styling */
+/*- Util: Close pop up button*/
+.popup-close {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.5rem;
+    font-size: 1.7rem;
+    background: none;
+    border: none;
+    color: rgb(255, 128, 128);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup-close:hover {
+    color: red;
+}
+
+/*Information contained within the card*/
+/*C1 content*/
 .popup-title {
     font-size: 1.8rem;
     margin: 0 0 0.5rem 0;
@@ -70,25 +84,24 @@ body {
     color: var(--popup-text);
 }
 
-.popup-media {
-    width: 100%;
+/*C2 content*/
+/*- Util: Links to different stuff*/
+.popup-links {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000022;
-    border-radius: var(--popup-radius);
-    overflow: hidden;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.popup-media video,
-.popup-media iframe,
-.popup-media img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0.5rem;
+.popup-link {
+    font-size: 1.3rem;
+    padding: 0.4rem 0.6rem;
 }
 
+.popup-link:hover {
+    background-color: var(--work-color-active);
+}
+
+/*C3 content*/
 .popup-description {
     font-size: 1rem;
     opacity: 0.9;
@@ -106,21 +119,6 @@ body {
 .popup-description.expanded {
     -webkit-line-clamp: unset;
     line-clamp: unset;
-}
-
-.popup-readmore-wrapper {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.popup-readmore {
-    background: none;
-    border: none;
-    color: var(--work-color-highlight);
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.9rem;
-    margin-top: -0.5rem;
 }
 
 .popup-bullets {
@@ -149,40 +147,43 @@ body {
     font-size: 0.85rem;
 }
 
-.popup-links {
+/*- Util: ReadMore effect*/
+.popup-readmore-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: flex-start;
 }
 
-.popup-link {
-    font-size: 1.3rem;
-    padding: 0.4rem 0.6rem;
-    background-color: var(--work-bg);
-    /*border: 1px solid rgba(255, 255, 255, 0.2);*/
-}
-
-.popup-link:hover {
-    background-color: var(--work-color-active);
-}
-
-.popup-close {
-    position: absolute;
-    top: 0.3rem;
-    right: 0.5rem;
-    font-size: 1.7rem;
+.popup-readmore {
     background: none;
     border: none;
-    color: rgb(255, 128, 128);
+    color: var(--work-color-highlight);
+    font-weight: bold;
     cursor: pointer;
-    z-index: 1001;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
 }
 
-.popup-close:hover {
-    color: red;
+/*C4 content*/
+.popup-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000022;
+    border-radius: var(--popup-radius);
+    overflow: hidden;
 }
 
-/* Responsive: Stack in single column */
+.popup-media video,
+.popup-media iframe,
+.popup-media img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/*Mobile*/
 @media (max-width: 1150px) {
     .project-popup-card {
         grid-template-columns: 1fr;

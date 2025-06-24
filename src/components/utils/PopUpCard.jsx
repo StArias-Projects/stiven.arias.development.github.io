@@ -11,7 +11,7 @@ export default function PopUpCard({ project, onClose }) {
     };
 
     return (
-        <div className="project-popup-card">
+        <div className="popup-card-container">
             <button className="popup-close" onClick={onClose}>
                 <i className="fa fa-window-close"></i>
             </button>

@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import '../../styles/experience.css';
+import '../../styles/cards.css';
+import '../../styles/work.css';
 
 import Gif from '../utils/Gif.jsx';
 import YouTube from '../utils/YouTube.jsx';
 import hisplayer_gif from '../../assets/gif/hisplayer.gif';
 import labotec_gif from '../../assets/gif/labotec.gif';
+
+const video_trailer_id = "du1d0O83EYo";
 
 export default function Experience() {
     const [expandedIndex, setExpandedIndex] = useState(null);
@@ -38,7 +41,7 @@ export default function Experience() {
                 'Blender, Photoshop, and Video Edition Tools',
             ],
             keywords: [],
-            mediaComponent: <YouTube videoId="du1d0O83EYo" />,
+            mediaComponent: <YouTube videoId={video_trailer_id} />,
             links: [
                 { label: 'Reach out to me here!', url: 'https://www.upwork.com/en-gb/freelancers/~018f7e0e1df08439dd' },
             ],
@@ -130,7 +133,7 @@ export default function Experience() {
                                             href={link.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="card-link"
+                                            className="work-button card-link"
                                         >
                                             {link.label} <i className="fa fa-arrow-right" style={{ transform: 'rotate(-45deg)' }}></i>
                                         </a>

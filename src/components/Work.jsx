@@ -39,7 +39,7 @@ export default function Work({ subSection, setSubSection, setSection }) {
               setSubSection('projects');
               window.scrollTo(0, 0);
             }} className="work-button work-crosslink-button">
-              💻 Explore Projects 💻
+              👾 Explore Projects 👾
             </button>
           </>
         )}
@@ -52,7 +52,7 @@ export default function Work({ subSection, setSubSection, setSection }) {
               setSubSection('experience');
               window.scrollTo(0, 0);
             }} className="work-button work-crosslink-button">
-              👾 Explore Experience 👾
+              💻 Explore Experience 💻
             </button>
             <div className="client-overview-container">
               <ClientOverview />

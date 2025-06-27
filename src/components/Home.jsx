@@ -7,7 +7,7 @@ import ClientOverview from './utils/ClientOverview.jsx';
 import YouTube from './utils/YouTube.jsx';
 import SocialLinks from './utils/SocialLinks.jsx';
 
-const video_trailer_id = "du1d0O83EYo";
+const video_trailer_id = "b_oiX-hFn6s";
 
 export default function Home() {
   return (

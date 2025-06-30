@@ -7,7 +7,7 @@ import YouTube from '../utils/YouTube.jsx';
 import hisplayer_gif from '../../assets/gif/hisplayer.gif';
 import labotec_gif from '../../assets/gif/labotec.gif';
 
-const video_trailer_id = "b_oiX-hFn6s";
+const video_trailer_id = "Hy9X7DcGjmc";
 
 export default function Experience() {
     const [expandedIndex, setExpandedIndex] = useState(null);

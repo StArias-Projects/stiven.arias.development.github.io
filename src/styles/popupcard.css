@@ -2,6 +2,7 @@
     --popup-bg: rgb(35, 35, 35);
     --popup-radius: 1rem;
     --popup-padding: 2.5rem;
+    --popup-padding-m: 1rem;
     --popup-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     --popup-highlight: #2fff00;
     --popup-text: #ffffff;
@@ -185,13 +186,14 @@
 
 /*Mobile*/
 @media (max-width: 1150px) {
-    .project-popup-card {
+    .popup-card-container {
         grid-template-columns: 1fr;
         grid-template-areas:
             "c1"
             "c2"
             "c4"
             "c3";
+        padding: var(--popup-padding-m);
     }
 
     .popup-link {

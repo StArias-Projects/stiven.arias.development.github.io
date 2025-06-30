@@ -206,9 +206,4 @@
   .project-overlay {
     padding: 0;
   }
-
-  .project-popup>.project-popup-card {
-    width: 100%;
-    box-sizing: border-box;
-  }
 }
